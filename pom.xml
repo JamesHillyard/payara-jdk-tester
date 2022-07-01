@@ -207,10 +207,10 @@
                                     <name>payaramicro.port</name>
                                     <value>20000</value>
                                 </property>
-                                <property>
+                                <!--property>
                                     <name>payaramicro.rootDir</name>
                                     <value>${domain.dir}</value>
-                                </property>
+                                </property-->
                                 <property>
 	                                <name>org.glassfish.deployment.trace</name>
 	                                <value>true</value>
