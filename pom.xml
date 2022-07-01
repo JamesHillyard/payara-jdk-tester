@@ -19,7 +19,7 @@
 		<java-version>17</java-version>
 
 		<!-- Payara version -->
-		<payara-version>5.2022.1</payara-version>
+		<payara-version>5.2022.2</payara-version>
 
 		<!-- Maven plugin versions -->
 		<war-plugin-version>3.3.1</war-plugin-version>
@@ -56,6 +56,8 @@
         <slack-api-version>1.20.2</slack-api-version>
         <web-push-version>5.1.1</web-push-version>
         <bouncycastle-version>1.71</bouncycastle-version>
+        <google-auth-oauth2-version>1.2.2</google-auth-oauth2-version>
+        <google-analytics-version>v3-rev169-1.25.0</google-analytics-version>
 
 	</properties>
 	
@@ -206,6 +208,10 @@
                                     <value>20000</value>
                                 </property>
                                 <property>
+                                    <name>payaramicro.rootDir</name>
+                                    <value>${domain.dir}</value>
+                                </property>
+                                <property>
 	                                <name>org.glassfish.deployment.trace</name>
 	                                <value>true</value>
 	                            </property>
@@ -322,32 +328,6 @@
             <artifactId>poi-ooxml</artifactId>
             <version>${apache-poi-version}</version>
             <scope>compile</scope>
-            <exclusions><!-- Trying to save some space here, these are unneeded but take a ton of space-->
-                <exclusion>
-                    <groupId>org.apache.xmlgraphics</groupId>
-                    <artifactId>batik-all</artifactId>
-                </exclusion>
-                <exclusion>
-                    <groupId>org.apache.pdfbox</groupId>
-                    <artifactId>pdfbox</artifactId>
-                </exclusion>
-                <exclusion>
-                    <groupId>org.bouncycastle</groupId>
-                    <artifactId>bcpkix-jdk15on</artifactId>
-                </exclusion>
-                <exclusion>
-                    <groupId>org.bouncycastle</groupId>
-                    <artifactId>bcprov-jdk15on</artifactId>
-                </exclusion>
-                <exclusion>
-                    <groupId>de.rototor.pdfbox</groupId>
-                    <artifactId>graphics2d</artifactId>
-                </exclusion>
-                <exclusion>
-                    <groupId>com.github.virtuald</groupId>
-                    <artifactId>curvesapi</artifactId>
-                </exclusion>
-            </exclusions>
         </dependency>
         <dependency> <!-- This dependency is needed because  mvn won't find some schemas at compile time -->
             <groupId>org.apache.poi</groupId>
@@ -360,6 +340,41 @@
             <artifactId>slack-api-client</artifactId>
             <version>${slack-api-version}</version>
             <scope>compile</scope>
+        </dependency>
+        <dependency>
+            <groupId>com.google.auth</groupId>
+            <artifactId>google-auth-library-oauth2-http</artifactId>
+            <version>${google-auth-oauth2-version}</version>
+        </dependency>
+        <dependency>
+            <groupId>com.google.apis</groupId>
+            <artifactId>google-api-services-analytics</artifactId>
+            <version>${google-analytics-version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.ow2.asm</groupId>
+            <artifactId>asm</artifactId>
+            <version>9.3</version>
+        </dependency>
+        <dependency>
+            <groupId>org.ow2.asm</groupId>
+            <artifactId>asm-analysis</artifactId>
+            <version>9.3</version>
+        </dependency>
+        <dependency>
+            <groupId>org.ow2.asm</groupId>
+            <artifactId>asm-commons</artifactId>
+            <version>9.3</version>
+        </dependency>
+        <dependency>
+            <groupId>org.ow2.asm</groupId>
+            <artifactId>asm-tree</artifactId>
+            <version>9.3</version>
+        </dependency>
+        <dependency>
+            <groupId>org.ow2.asm</groupId>
+            <artifactId>asm-util</artifactId>
+            <version>9.3</version>
         </dependency>
 
 
