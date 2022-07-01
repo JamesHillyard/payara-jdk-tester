@@ -16,7 +16,7 @@
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 
 		<!-- JAVA version -->
-		<java-version>17</java-version>
+		<java-version>11</java-version>
 
 		<!-- Payara version -->
 		<payara-version>5.2022.2</payara-version>
