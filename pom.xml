@@ -19,7 +19,7 @@
 		<java-version>17</java-version>
 
 		<!-- Payara version -->
-		<payara-version>5.2022.2</payara-version>
+		<payara-version>6.2022.1.Alpha2</payara-version>
 
 		<!-- Maven plugin versions -->
 		<war-plugin-version>3.3.1</war-plugin-version>
